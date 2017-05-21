@@ -9,7 +9,6 @@
         *{
             margin: 0;
             padding: 0;
-            font-family: font-family: 'Nanum Pen Script', cursive;
         }
         ul, li{
             list-style: none;
@@ -24,6 +23,7 @@
         input[type*="radio"]{
             display: none;
         }
+        
         header nav#topNavi{
             height: 30px;
             background-color: rgba(187, 212, 229, .5);
@@ -187,53 +187,29 @@
         }
         
         section#mainBanner{
-            border: 1px solid green;
             width: 1200px;
             height: 450px;
             margin: 13px auto;
-            margin-top: 64px;
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
         }
         #mainBanner label{
+            align-self: flex-end;
             z-index: 1000;
-            position: relative;
-            top: 412px;
-            display: block;
-            float: left;
-            width: 148.89px;
+            width: 35px;
             height: 35px;
-            text-align: center;
+            border-radius: 50%;
             line-height: 35px;
+            text-align: center;
+            margin: 10px 5px;
             cursor: pointer;
             border: 1px solid gray;
             border-right: none;
-            background-color: white;
-            opacity: 0.5;
+            background-color: rgba(0,0,0,.3);
         }
-        #mainBanner div.slider{
-            border: 1px solid magenta;
-            width: 100%;
-            height: 412px;
-            overflow: hidden;
-        }
-        #mainBanner div.slider div.slider-inner{
-            border: 1px solid cyan;
-            animation: rotate 9s infinite;
-        }
-        @keyframes rotate{
-            0% {transform: translateX(0);}
-            15% {transform: translateX(-100vw);}
-            30% {transform: translateX(-100vw);}
-            45% {transform: translateX(-200vw);}
-            60% {transform: translateX(-200vw);}
-            75% {transform: translateX(-100vw);}
-            100% {transform: translateX(0vw);}
-        }
-        #mainBanner ul{
-            border: 1px solid blue;
-            display: flex;
-        }
-        #mainBanner ul.bannerImg{}
-            flex: 0;
+        #mainBanner ul.bannerImg{
+            position: absolute;
             width: 1200px;
             height: 450px;
             overflow: hidden;
@@ -503,6 +479,11 @@
             color: white;
             margin-top: 130px;
         }
+        
+        footer{
+            width: 100%;
+            background-color: dimgrey;
+        }
     </style>
 </head>
 <body>
@@ -766,20 +747,16 @@
         <label for="banner7">7</label>
         <input id="banner8" name="mBanner" type="radio">
         <label for="banner8" style="border-right: 1px solid gray;">8</label>
-        <div class="slider">
-            <div class="slider-inner">
-                <ul class="bannerImg">
-                    <li class="b1"><a href="#"><img src="images/b1.png"></a></li>
-                    <li class="b2"><a href="#"><img src="images/b2.png"></a></li>
-                    <li class="b3"><a href="#"><img src="images/b3.png"></a></li>
-                    <li class="b4"><a href="#"><img src="images/b4.png"></a></li>
-                    <li class="b5"><a href="#"><img src="images/b5.png"></a></li>
-                    <li class="b6"><a href="#"><img src="images/b6.png"></a></li>
-                    <li class="b7"><a href="#"><img src="images/b7.png"></a></li>
-                    <li class="b8"><a href="#"><img src="images/b8.png"></a></li>
-                </ul>
-            </div>      
-        </div>
+        <ul class="bannerImg">
+            <li class="b1"><a href="#"><img src="images/b1.png"></a></li>
+            <li class="b2"><a href="#"><img src="images/b2.png"></a></li>
+            <li class="b3"><a href="#"><img src="images/b3.png"></a></li>
+            <li class="b4"><a href="#"><img src="images/b4.png"></a></li>
+            <li class="b5"><a href="#"><img src="images/b5.png"></a></li>
+            <li class="b6"><a href="#"><img src="images/b6.png"></a></li>
+            <li class="b7"><a href="#"><img src="images/b7.png"></a></li>
+            <li class="b8"><a href="#"><img src="images/b8.png"></a></li>
+        </ul>      
     </section>
     <nav id="freqMenu">
         <ul>
@@ -888,7 +865,8 @@
         </div>
     </section>
     <footer>
-        
+        <img src="images/logo_footer.png">
+          
     </footer>
 </body>
 </html>
