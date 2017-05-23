@@ -23,30 +23,42 @@
         input[type*="radio"]{
             display: none;
         }
+        input:checked + label{
+            background-color: gold;
+        }
         
+        aside#fixRight{
+            z-index: 10000;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+        }
         header nav#topNavi{
             height: 30px;
-            background-color: rgba(187, 212, 229, .5);
+            background-color: #BBD4E5;
+            border-bottom: 1px solid lightgray;
         }
         #topNavi ul{
             width: 1200px;
-            height: 30px;
             margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
         }
         #topNavi ul li{
             float: left;
             width: 70px;
-            height: 30px;
             padding: 0 10px;
             text-align: center;
             line-height: 30px;
-            border-right: 1px solid white;
-            position: relative;
-            right: -835px;
+            border-right: 1px solid #EFEFEF;
         }
         #topNavi ul li a{
-            color: black;
+            color: white;
             font-size: 14px;
+            font-weight: 600;
         }
         header div.logoSearchArea{
             width: 1200px;
@@ -97,12 +109,15 @@
             overflow: hidden;
             height: 0;
         }
+        #mainNavi li:hover{
+            background-color: rgba(35,180,194,.5);
+        }
         #mainNavi li:hover div.wrap{
             overflow: visible;
             height: 300px;
             border-bottom: 1px solid blue;
             z-index: 10000;
-            background-color: aliceblue;
+            background-color: white;
 
         }
         #mainNavi div.wrapwrap{
@@ -144,34 +159,29 @@
             margin-bottom: 10px;
         }
         #mainNavi ul.depth3-1{
-            border: 1px solid orange;
-            width: 170px;
+            width: 190px;
             position: absolute;
             top: 70px;
         }
         #mainNavi ul.depth3-2{
-            border: 1px solid orange;
             width: 170px;
             position: absolute;
             top: 70px;
             left: 407px;
         }
         #mainNavi ul.depth3-3{
-            border: 1px solid orange;
             width: 170px;
             position: absolute;
             top: 70px;
             left: 599px;
         }
         #mainNavi ul.depth3-4{
-            border: 1px solid orange;
             width: 170px;
             position: absolute;
             top: 70px;
             left: 791px;
         }
         #mainNavi ul.depth3-5{
-            border: 1px solid orange;
             width: 170px;
             position: absolute;
             top: 70px;
@@ -339,7 +349,7 @@
         }
             
         section#content1{
-            margin: 0 auto;
+            margin: 13px auto;
             width: 1200px;
             height: 222px;
             border: 1px solid green;
@@ -415,17 +425,43 @@
             width: 400px;
             height: 220px;
             float: left;
-            background: url(images/x_soe1.jpg) no-repeat right bottom;
+            background: url(images/x_soe1.jpg) no-repeat left bottom;
             /*261*180*/
         }
-        #content1 #edu div.eduTop{
+        #edu div.eduTop{
             border: 1px solid green;
             width: 400xp;
             height: 38px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 38px;
+        }
+        .eduTop b{
+            border: 1px solid black;
+            padding: 0 5px;
+        }
+        .c1Image{
+            display: flex;
+        }
+        .c1Image a{
+            width: 38px;
+            height: 38px;
+        }
+        .snsF{
+            background: url(images/ico_sns_facebook.png) no-repeat center center / contain;
+        }
+        .snsK{
+            background: url(images/ico_sns_kakaostory.png) no-repeat center center / contain;
+        }
+        .snsB{
+            background: url(images/ico_sns_blog.png) no-repeat center center / contain;
+        }
+        .snsR{
+            background: url(images/ico_sns_reporter.png) no-repeat center center / contain;
         }
         #content1 #edu div.eduAside{
             border: 1px solid gold;
-            float: left;
+            float: right;
             width: 137px;
             height: 178px;
         }
@@ -451,50 +487,209 @@
             width: 1200px;
             height: 180px;
             margin: 13px auto;
+            display: flex;
+            justify-content: space-between;
+            align-content: flex-end;
         }
-        #content2 div{
+        #content2 div[class]{
+            border: 1px solid blue;
             background-color: rgba(0,0,0,.1);
-            float: left;
             width: 390px;
-            height: 180px;
             text-align: center;
-            margin-right:10px;
+        }
+        #content2 div[class] div{
+            border: 1px solid gold;
+            height: 100%; 
+            display: flex;
         }
         #content2 div.news div{
-            background: url(images/news.jpg) no-repeat center center;
+            background: url(images/news.jpg) no-repeat center center / cover;
         }
         #content2 div.ebook div{
-            background: url(images/ebook.gif) no-repeat center center;
+            background: url(images/ebook.gif) no-repeat center center /cover;
         }
         #content2 div.media div{
-            background: url(images/media.jpg) no-repeat center center;
+            background: url(images/media.jpg) no-repeat center center /cover;
         }
-        #content2 div div b{
-            border: 1px solid black;
-            display: block;
+        #content2 div[class] div p{
+            border: 1px solid red;
+            align-self: flex-end;
+            width: 100%;
             height: 50px;
             line-height: 50px;
             background-color: black;
             opacity: 0.7;
             color: white;
-            margin-top: 130px;
+        }
+        
+        section#content3{
+            border: 1px solid green;
+            width: 1200px;
+            height: 200px;
+            margin: 13px auto;
+            display: flex;
+        }
+        ul.slide{
+            border: 1px solid deepskyblue;
+            overflow: hidden;
+        }
+        .slide li{
+            float: left;
+            width: 296px;
+            height: 200px;
+        }
+        .sl1{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide01.gif) no-repeat center center; 
+        }
+        .sl2{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide02.gif) no-repeat center center;
+        }
+        .sl3{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide03.gif) no-repeat center center;
+        }
+        .sl4{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide04.gif) no-repeat center center;
+        }
+        .sl5{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide05.gif) no-repeat center center;
+        }
+        .sl6{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide06.gif) no-repeat center center;
+        }
+        .sl7{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide07.gif) no-repeat center center;
+        }
+        .sl8{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide08.gif) no-repeat center center;
+        }
+        .sl9{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide09.gif) no-repeat center center;
+        }
+        .sl10{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide10.gif) no-repeat center center;
+        }
+        .sl11{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide11.gif) no-repeat center center;
+        }
+        .sl12{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide12.gif) no-repeat center center;
+        }
+        .sl13{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide13.gif) no-repeat center center;
+        }
+        .sl14{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide14.gif) no-repeat center center;
+        }
+        .sl15{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide15.gif) no-repeat center center;
+        }
+        .sl16{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide16.gif) no-repeat center center;
+        }
+        .sl17{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide17.gif) no-repeat center center;
+        }
+        .sl18{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide18.gif) no-repeat center center;
+        }
+        section#content4{
+            border: 1px solid green;
+            width: 1200px;
+            height: 200px;
+            margin: 13px auto;
+        }
+        #content4 div.shortcut{
+            width: 1200px;
+            border: 1px solid gold;
+            display: flex;
+            position: relative;
+        }
+        .shortcut label{
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid gray;
+            border-right: none;
+        }
+        .shortcut ul{
+            position: absolute;
+            top: 50px;
+            height: auto;
+        }
+        .shortcut ul li{
+            border: 1px solid lightblue;
+            float: left;
+            white-space: nowrap;
+            width: 185px;
+            margin-right: 13px;
+            font-size: 15px;
+        }
+        .rel-org, .dir-org, .reg-edu, .reg-edu2{
+            display: none;
+        } 
+        #sc1:checked ~ .rel-org,
+        #sc2:checked ~ .dir-org,
+        #sc3:checked ~ .reg-edu,
+        #sc4:checked ~ .reg-edu2{
+            display: block;
         }
         
         footer{
             width: 100%;
             background-color: dimgrey;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        footer ul li{
+            float: left;
+            padding: 0 10px;
+            border-right: 1px solid black;
+        }
+        footer ul li a{
+            
+        }
+        footer address{
+            font-style: normal;
+            clear: both;
+        }
+        footer span{
+            
         }
     </style>
 </head>
 <body>
+    <aside id="fixRight">
+        
+    </aside>   
     <header>
-        <nav id="topNavi">
+        <nav id="topNavi">  
             <ul>
-                <li style="border-left: 1px solid white;"><a href="#">홈</a></li>
+                <li style="border-left: 1px solid white;"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">사이트맵</a></li>
                 <li><a href="#">English</a></li>
-            </ul>
+            </ul> 
         </nav>
         <div class="logoSearchArea">
             <a class="logo" href="http://www.goe.go.kr/">
@@ -509,22 +704,22 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/computer.png">
                                     <p>전자민원</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
                                         <li><a href="#">전자민원창구</a>
                                             <ul class="depth3-1">
-                                                <li><a href="#">민원안내</a></li>
-                                                <li><a href="#">온라인일반민원신청</a></li>
-                                                <li><a href="#">홈에듀증명민원</a></li>
-                                                <li><a href="#">민원사전예약안내</a></li>
-                                                <li><a href="#">검정/인가/승인/허가민원</a></li>
-                                                <li><a href="#">자료실</a></li>
-                                                <li><a href="#">민원옴부즈만소개</a></li>
-                                                <li><a href="#">정보공개청구</a></li>
-                                                <li><a href="#">사전정보 공표목록</a></li>
+                                                <li><a href="#">민원안내<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">온라인일반민원신청<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">홈에듀증명민원<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">민원사전예약안내<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">검정/인가/승인/허가민원<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">자료실<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">민원옴부즈만소개<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">정보공개청구<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">사전정보 공표목록<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </li>  
                                         <li><a href="#">경기에듀콜센터</a></li>
@@ -548,7 +743,7 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/newspaper.png">
                                     <p>뉴스/소식</p>  
                                 </div>
                                 <div class="d2Wrap">
@@ -567,16 +762,16 @@
                                                 <li><a href="#">이용안내</a></li>
                                                 <li><a href="#">고시등록부</a></li>
                                                 <li><a href="#">공시등록부</a></li>
-                                                <li><a href="#">입법예고</a></li>
+                                                <li><a href="#">입법예고<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">경기교육소식</a>
                                             <ul class="depth3-4">
-                                                <li><a href="#">미디어 경청</a></li>
-                                                <li><a href="#">경기교육E-BOOK</a></li>
-                                                <li><a href="#">경기도의회</a></li>
-                                                <li><a href="#">생방송보기</a></li>
-                                                <li><a href="#">교육위원회</a></li>
+                                                <li><a href="#">미디어 경청<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">경기교육E-BOOK<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">경기도의회<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">생방송보기<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">교육위원회<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -588,7 +783,7 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/residents.png">
                                     <p>주민참여</p>  
                                 </div>
                                 <div class="d2Wrap">
@@ -602,7 +797,7 @@
                                         </li>
                                         <li><a href="#">주민참여예산</a>
                                             <ul class="depth3-2">
-                                                <li><a href="#">운영</a></li>
+                                                <li><a href="#">운영<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
                                                 <li><a href="#">참여게시판</a></li>
                                             </ul>
                                         </li>
@@ -624,7 +819,7 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/office.png">
                                     <p>교육청소개</p>  
                                 </div>
                                 <div class="d2Wrap">
@@ -660,7 +855,7 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/home.png">
                                     <p>학생/학부모</p>  
                                 </div>
                                 <div class="d2Wrap">
@@ -684,7 +879,7 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/notebook.png">
                                     <p>일반수험생</p>  
                                 </div>
                                 <div class="d2Wrap">
@@ -706,7 +901,7 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png" alt="민원픽토그램">
+                                    <img src="images/school.png">
                                     <p>교사/교직원</p>  
                                 </div>
                                 <div class="d2Wrap">
@@ -719,8 +914,8 @@
                                         <li><a href="#">인사정보</a></li>
                                         <li><a href="#">행동강령</a></li>
                                         <li><a href="#">교원업무정상화</a></li>
-                                        <li><a href="#">법무행정서비스</a></li>
-                                        <li><a href="#">교직원힐링센터</a></li>
+                                        <li><a href="#">법무행정서비스<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                        <li><a href="#">교직원힐링센터<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -731,7 +926,7 @@
         </nav>
     </header>
     <section id="mainBanner">
-        <input id="banner1" name="mBanner" type="radio" checked="">
+        <input id="banner1" name="mBanner" type="radio" checked>
         <label for="banner1">1</label>
         <input id="banner2" name="mBanner" type="radio">
         <label for="banner2">2</label>
@@ -746,7 +941,7 @@
         <input id="banner7" name="mBanner" type="radio">
         <label for="banner7">7</label>
         <input id="banner8" name="mBanner" type="radio">
-        <label for="banner8" style="border-right: 1px solid gray;">8</label>
+        <label for="banner8">8</label>
         <ul class="bannerImg">
             <li class="b1"><a href="#"><img src="images/b1.png"></a></li>
             <li class="b2"><a href="#"><img src="images/b2.png"></a></li>
@@ -837,7 +1032,13 @@
        </article>
        <article id="edu">
            <div class="eduTop">
-               <p>경기도 교육감 이재정입니다.</p>
+               <b>경기도 교육감 이재정입니다.</b>
+               <div class="c1Image">
+               <a href="#" class="snsF"></a>
+               <a href="#" class="snsK"></a>
+               <a href="#" class="snsB"></a>
+               <a href="#" class="snsR"></a>
+               </div>
            </div>
            <div class="eduAside">
                <ul>
@@ -850,23 +1051,161 @@
     <section id="content2">
         <div class="news">
             <div>
-                <b>보도자료<i class="fa fa-plus-circle" aria-hidden="true"></i></b>
+                <p>보도자료<i class="fa fa-plus-circle" aria-hidden="true"></i></p>
             </div>
         </div>
         <div class="ebook">
             <div>
-            <b>2017 경기교육정책<i class="fa fa-plus-circle" aria-hidden="true"></i></b>
+            <p>2017 경기교육정책<i class="fa fa-plus-circle" aria-hidden="true"></i></p>
             </div>
         </div>
         <div class="media">
             <div>
-            <b>청소년방송<i class="fa fa-plus-circle" aria-hidden="true"></i></b>
+            <p>청소년방송<i class="fa fa-plus-circle" aria-hidden="true"></i></p>
             </div>
+        </div>
+    </section>
+    <section id="content3">
+        <ul class="slide">
+            <li class="sl1"><a href="#"></a></li>
+            <li class="sl2"><a href="#"></a></li>
+            <li class="sl3"><a href="#"></a></li>
+            <li class="sl4"><a href="#"></a></li>
+            <li class="sl5"><a href="#"></a></li>
+            <li class="sl6"><a href="#"></a></li>
+            <li class="sl7"><a href="#"></a></li>
+            <li class="sl8"><a href="#"></a></li>
+            <li class="sl9"><a href="#"></a></li>
+            <li class="sl10"><a href="#"></a></li>
+            <li class="sl11"><a href="#"></a></li>
+            <li class="sl12"><a href="#"></a></li>
+            <li class="sl13"><a href="#"></a></li>
+            <li class="sl14"><a href="#"></a></li>
+            <li class="sl15"><a href="#"></a></li>
+            <li class="sl16"><a href="#"></a></li>
+            <li class="sl17"><a href="#"></a></li>
+            <li class="sl18"><a href="#"></a></li>
+        </ul>
+    </section>
+    <section id="content4">
+        <div class="shortcut">
+            <input id="sc1" name="shortCut" type="radio" checked>
+            <label for="sc1">관련기관</label>
+            <input id="sc2" name="shortCut" type="radio">
+            <label for="sc2">직속기관</label>
+            <input id="sc3" name="shortCut" type="radio">
+            <label for="sc3">교육지원청</label>
+            <input id="sc4" name="shortCut" type="radio">
+            <label for="sc4">유관기관</label>
+            <ul class="rel-org">
+                <li><a href="#">교육부</a></li>
+                <li><a href="#">경기도의회 교육위원회</a></li>
+                <li><a href="#">경기도의회</a></li>
+                <li><a href="#">경기도학교안전공제회</a></li>
+                <li><a href="#">광주광역시교육청</a></li>
+                <li><a href="#">대구광역시교육청</a></li>
+                <li><a href="#">대전광역시교육청</a></li>
+                <li><a href="#">부산광역시교육청</a></li>
+                <li><a href="#">서울특별시교육청</a></li>
+                <li><a href="#">울산광역시교육청</a></li>
+                <li><a href="#">인천광역시교육청</a></li>
+                <li><a href="#">강원도교육청</a></li>
+                <li><a href="#">경상남도교육청</a></li>
+                <li><a href="#">경상북도교육청</a></li>
+                <li><a href="#">전라남도교육청</a></li>
+                <li><a href="#">전라북도교육청</a></li>
+                <li><a href="#">충청남도교육청</a></li>
+                <li><a href="#">충청북도교육청</a></li>
+                <li><a href="#">제주특별자치도교육청</a></li>
+                <li><a href="#">세종특별자치시교육청</a></li>
+                <li><a href="#">국제교육진흥원</a></li>
+                <li><a href="#">경기교육장학재단</a></li>
+                <li><a href="#">한국교육개발원</a></li>
+                <li><a href="#">한국교육학술정보원</a></li>
+                <li><a href="#">한국직업능력개발원</a></li>
+            </ul>
+            <ul class="dir-org">
+                <li><a href="#">경기도교육연수원</a></li>
+                <li><a href="#">경기도교육복지종합센터</a></li>
+                <li><a href="#">경기도교육정보기록원</a></li>
+                <li><a href="#">경기도교직원가평수덕원</a></li>
+                <li><a href="#">재단법인 경기도교육연구원</a></li>
+                <li><a href="#">경기도교직원안성수덕원</a></li>
+                <li><a href="#">경기도교직원연천수덕원</a></li>
+                <li><a href="#">경기도과학교육원</a></li>
+                <li><a href="#">경기도도당학생체육관</a></li>
+                <li><a href="#">경기도립과천도서관</a></li>
+                <li><a href="#">경기도립녹양도서관</a></li>
+                <li><a href="#">경기도립발안도서관</a></li>
+                <li><a href="#">경기도립성남도서관</a></li>
+                <li><a href="#">경기도립중앙도서관</a></li>
+                <li><a href="#">경기도평화교육연수원</a></li>
+                <li><a href="#">경기도유아체험교육원</a></li>
+                <li><a href="#">경기도율곡교육연수원</a></li>
+                <li><a href="#">경기도외국어교육연수원</a></li>
+                <li><a href="#">경기도평촌학생체육관</a></li>
+                <li><a href="#">김포학생야영장</a></li>
+                <li><a href="#">양평학생야영장</a></li>
+                <li><a href="#">여주학생야영장</a></li>
+                <li><a href="#">연천학생야영장</a></li>
+                <li><a href="#">용인학생야영장</a></li>
+                <li><a href="#">포천학생야영장</a></li>
+                <li><a href="#">경기도학생교육원</a></li>
+                <li><a href="#">경기평생교육학습관</a></li>
+                <li><a href="#">경기도농업계고등학교공동실습소</a></li>
+                <li><a href="#">경기도공업계고등학교공동실습소</a></li>
+            </ul>
+            <ul class="reg-edu">
+                <li><a href="#">가평교육지원청</a></li>
+                <li><a href="#">고양교육지원청</a></li>
+                <li><a href="#">광명교육지원청</a></li>
+                <li><a href="#">광주하남교육지원청</a></li>
+                <li><a href="#">구리남양주교육지원청</a></li>
+                <li><a href="#">군포의왕교육지원청</a></li>
+                <li><a href="#">김포교육지원청</a></li>
+                <li><a href="#">동두천양주교육지원청</a></li>
+                <li><a href="#">부천교육지원청</a></li>
+                <li><a href="#">성남교육지원청</a></li>
+                <li><a href="#">수원교육지원청</a></li>
+                <li><a href="#">시흥교육지원청</a></li>
+                <li><a href="#">안산교육지원청</a></li>
+                <li><a href="#">안성교육지원청</a></li>
+                <li><a href="#">안양과천교육지원청</a></li>
+                <li><a href="#">양평교육지원청</a></li>
+                <li><a href="#">여주교육지원청</a></li>
+                <li><a href="#">연천교육지원청</a></li>
+                <li><a href="#">용인교육지원청</a></li>
+                <li><a href="#">의정부교육지원청</a></li>
+                <li><a href="#">이천교육지원청</a></li>
+                <li><a href="#">파주교육지원청</a></li>
+                <li><a href="#">평택교육지원청</a></li>
+                <li><a href="#">포천교육지원청</a></li>
+                <li><a href="#">화성오산교육지원청</a></li>
+            </ul>
+            <ul class="reg-edu2">
+                <li><a href="#">재단법인 경기도교육연구원</a></li>
+            </ul>
         </div>
     </section>
     <footer>
         <img src="images/logo_footer.png">
-          
+        <div>
+        <ul>
+            <li><a href="#">청사배치도</a></li>
+            <li><a href="#">찾아오시는 길</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">홈페이지이용약관</a></li>
+            <li><a href="#">홈페이지 개선의견</a></li>
+        </ul>
+        <address>
+            남부청사 (16279) 경기도 수원시 장안구 조원로 18 ☎031-1396, 031-249-0114<br>
+            북부청사 (11750) 경기도 의정부시 동일로 700
+        </address>
+        <p>Copyright&#9400; 2014 Gyeonggido Office of Education, All Right Reserved</p>
+        </div>
+        <span class="fbanner2">
+            <img src="images/wa.png">
+        </span>
     </footer>
 </body>
 </html>
