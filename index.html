@@ -23,6 +23,9 @@
         input[type*="radio"]{
             display: none;
         }
+        input:checked + label{
+            background-color: gold;
+        }
         
         header nav#topNavi{
             height: 30px;
@@ -339,7 +342,7 @@
         }
             
         section#content1{
-            margin: 0 auto;
+            margin: 13px auto;
             width: 1200px;
             height: 222px;
             border: 1px solid green;
@@ -415,7 +418,7 @@
             width: 400px;
             height: 220px;
             float: left;
-            background: url(images/x_soe1.jpg) no-repeat right bottom;
+            background: url(images/x_soe1.jpg) no-repeat left bottom;
             /*261*180*/
         }
         #content1 #edu div.eduTop{
@@ -425,7 +428,7 @@
         }
         #content1 #edu div.eduAside{
             border: 1px solid gold;
-            float: left;
+            float: right;
             width: 137px;
             height: 178px;
         }
@@ -451,38 +454,129 @@
             width: 1200px;
             height: 180px;
             margin: 13px auto;
+            display: flex;
+            justify-content: space-between;
+            align-content: flex-end;
         }
-        #content2 div{
+        #content2 div[class]{
+            border: 1px solid blue;
             background-color: rgba(0,0,0,.1);
-            float: left;
             width: 390px;
-            height: 180px;
             text-align: center;
-            margin-right:10px;
+        }
+        #content2 div[class] div{
+            border: 1px solid gold;
+            height: 100%; 
+            display: flex;
         }
         #content2 div.news div{
-            background: url(images/news.jpg) no-repeat center center;
+            background: url(images/news.jpg) no-repeat center center / cover;
         }
         #content2 div.ebook div{
-            background: url(images/ebook.gif) no-repeat center center;
+            background: url(images/ebook.gif) no-repeat center center /cover;
         }
         #content2 div.media div{
-            background: url(images/media.jpg) no-repeat center center;
+            background: url(images/media.jpg) no-repeat center center /cover;
         }
-        #content2 div div b{
-            border: 1px solid black;
-            display: block;
+        #content2 div[class] div p{
+            border: 1px solid red;
+            align-self: flex-end;
+            width: 100%;
             height: 50px;
             line-height: 50px;
             background-color: black;
             opacity: 0.7;
             color: white;
-            margin-top: 130px;
         }
         
+        section#content3{
+            border: 1px solid green;
+            width: 1200px;
+            height: 200px;
+            margin: 13px auto;
+            display: flex;
+        }
+        ul.slide{
+            border: 1px solid deepskyblue;
+            
+        }
+        .slide li{
+            float: left;
+            width: 296px;
+            height: 200px;
+        }
+        .sl1{
+            border: 1px solid darkolivegreen;
+            background: url(images/slider01.gif) no-repeat center center; 
+        }
+        .sl2{
+            border: 1px solid darkolivegreen;
+            background: url(images/slider02.gif) no-repeat center center;
+        }
+        section#content4{
+            border: 1px solid green;
+            width: 1200px;
+            height: 200px;
+            margin: 13px auto;
+        }
+        #content4 div.shortcut{
+            width: 1200px;
+            border: 1px solid gold;
+            display: flex;
+            position: relative;
+        }
+        .shortcut label{
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid gray;
+            border-right: none;
+        }
+        .shortcut ul{
+            position: absolute;
+            top: 50px;
+            height: auto;
+        }
+        .shortcut ul li{
+            border: 1px solid lightblue;
+            float: left;
+            white-space: nowrap;
+            width: 185px;
+            margin-right: 13px;
+            font-size: 15px;
+        }
+        .rel-org, .dir-org, .reg-edu, .reg-edu2{
+            display: none;
+        } 
+        #sc1:checked ~ .rel-org,
+        #sc2:checked ~ .dir-org,
+        #sc3:checked ~ .reg-edu,
+        #sc4:checked ~ .reg-edu2{
+            display: block;
+        }
         footer{
             width: 100%;
             background-color: dimgrey;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        footer ul li{
+            float: left;
+            padding: 0 10px;
+            border-right: 1px solid black;
+        }
+        footer ul li a{
+            
+        }
+        footer address{
+            font-style: normal;
+            clear: both;
+        }
+        footer span{
+            
         }
     </style>
 </head>
@@ -731,7 +825,7 @@
         </nav>
     </header>
     <section id="mainBanner">
-        <input id="banner1" name="mBanner" type="radio" checked="">
+        <input id="banner1" name="mBanner" type="radio" checked>
         <label for="banner1">1</label>
         <input id="banner2" name="mBanner" type="radio">
         <label for="banner2">2</label>
@@ -850,23 +944,145 @@
     <section id="content2">
         <div class="news">
             <div>
-                <b>보도자료<i class="fa fa-plus-circle" aria-hidden="true"></i></b>
+                <p>보도자료<i class="fa fa-plus-circle" aria-hidden="true"></i></p>
             </div>
         </div>
         <div class="ebook">
             <div>
-            <b>2017 경기교육정책<i class="fa fa-plus-circle" aria-hidden="true"></i></b>
+            <p>2017 경기교육정책<i class="fa fa-plus-circle" aria-hidden="true"></i></p>
             </div>
         </div>
         <div class="media">
             <div>
-            <b>청소년방송<i class="fa fa-plus-circle" aria-hidden="true"></i></b>
+            <p>청소년방송<i class="fa fa-plus-circle" aria-hidden="true"></i></p>
             </div>
+        </div>
+    </section>
+    <section id="content3">
+        <ul class="slide">
+            <li class="sl1"><a href="#"></a></li>
+            <li class="sl2"><a href="#"></a></li>
+        </ul>
+    </section>
+    <section id="content4">
+        <div class="shortcut">
+            <input id="sc1" name="shortCut" type="radio" checked>
+            <label for="sc1">관련기관</label>
+            <input id="sc2" name="shortCut" type="radio">
+            <label for="sc2">직속기관</label>
+            <input id="sc3" name="shortCut" type="radio">
+            <label for="sc3">교육지원청</label>
+            <input id="sc4" name="shortCut" type="radio">
+            <label for="sc4">유관기관</label>
+            <ul class="rel-org">
+                <li><a href="#">교육부</a></li>
+                <li><a href="#">경기도의회 교육위원회</a></li>
+                <li><a href="#">경기도의회</a></li>
+                <li><a href="#">경기도학교안전공제회</a></li>
+                <li><a href="#">광주광역시교육청</a></li>
+                <li><a href="#">대구광역시교육청</a></li>
+                <li><a href="#">대전광역시교육청</a></li>
+                <li><a href="#">부산광역시교육청</a></li>
+                <li><a href="#">서울특별시교육청</a></li>
+                <li><a href="#">울산광역시교육청</a></li>
+                <li><a href="#">인천광역시교육청</a></li>
+                <li><a href="#">강원도교육청</a></li>
+                <li><a href="#">경상남도교육청</a></li>
+                <li><a href="#">경상북도교육청</a></li>
+                <li><a href="#">전라남도교육청</a></li>
+                <li><a href="#">전라북도교육청</a></li>
+                <li><a href="#">충청남도교육청</a></li>
+                <li><a href="#">충청북도교육청</a></li>
+                <li><a href="#">제주특별자치도교육청</a></li>
+                <li><a href="#">세종특별자치시교육청</a></li>
+                <li><a href="#">국제교육진흥원</a></li>
+                <li><a href="#">경기교육장학재단</a></li>
+                <li><a href="#">한국교육개발원</a></li>
+                <li><a href="#">한국교육학술정보원</a></li>
+                <li><a href="#">한국직업능력개발원</a></li>
+            </ul>
+            <ul class="dir-org">
+                <li><a href="#">경기도교육연수원</a></li>
+                <li><a href="#">경기도교육복지종합센터</a></li>
+                <li><a href="#">경기도교육정보기록원</a></li>
+                <li><a href="#">경기도교직원가평수덕원</a></li>
+                <li><a href="#">재단법인 경기도교육연구원</a></li>
+                <li><a href="#">경기도교직원안성수덕원</a></li>
+                <li><a href="#">경기도교직원연천수덕원</a></li>
+                <li><a href="#">경기도과학교육원</a></li>
+                <li><a href="#">경기도도당학생체육관</a></li>
+                <li><a href="#">경기도립과천도서관</a></li>
+                <li><a href="#">경기도립녹양도서관</a></li>
+                <li><a href="#">경기도립발안도서관</a></li>
+                <li><a href="#">경기도립성남도서관</a></li>
+                <li><a href="#">경기도립중앙도서관</a></li>
+                <li><a href="#">경기도평화교육연수원</a></li>
+                <li><a href="#">경기도유아체험교육원</a></li>
+                <li><a href="#">경기도율곡교육연수원</a></li>
+                <li><a href="#">경기도외국어교육연수원</a></li>
+                <li><a href="#">경기도평촌학생체육관</a></li>
+                <li><a href="#">김포학생야영장</a></li>
+                <li><a href="#">양평학생야영장</a></li>
+                <li><a href="#">여주학생야영장</a></li>
+                <li><a href="#">연천학생야영장</a></li>
+                <li><a href="#">용인학생야영장</a></li>
+                <li><a href="#">포천학생야영장</a></li>
+                <li><a href="#">경기도학생교육원</a></li>
+                <li><a href="#">경기평생교육학습관</a></li>
+                <li><a href="#">경기도농업계고등학교공동실습소</a></li>
+                <li><a href="#">경기도공업계고등학교공동실습소</a></li>
+            </ul>
+            <ul class="reg-edu">
+                <li><a href="#">가평교육지원청</a></li>
+                <li><a href="#">고양교육지원청</a></li>
+                <li><a href="#">광명교육지원청</a></li>
+                <li><a href="#">광주하남교육지원청</a></li>
+                <li><a href="#">구리남양주교육지원청</a></li>
+                <li><a href="#">군포의왕교육지원청</a></li>
+                <li><a href="#">김포교육지원청</a></li>
+                <li><a href="#">동두천양주교육지원청</a></li>
+                <li><a href="#">부천교육지원청</a></li>
+                <li><a href="#">성남교육지원청</a></li>
+                <li><a href="#">수원교육지원청</a></li>
+                <li><a href="#">시흥교육지원청</a></li>
+                <li><a href="#">안산교육지원청</a></li>
+                <li><a href="#">안성교육지원청</a></li>
+                <li><a href="#">안양과천교육지원청</a></li>
+                <li><a href="#">양평교육지원청</a></li>
+                <li><a href="#">여주교육지원청</a></li>
+                <li><a href="#">연천교육지원청</a></li>
+                <li><a href="#">용인교육지원청</a></li>
+                <li><a href="#">의정부교육지원청</a></li>
+                <li><a href="#">이천교육지원청</a></li>
+                <li><a href="#">파주교육지원청</a></li>
+                <li><a href="#">평택교육지원청</a></li>
+                <li><a href="#">포천교육지원청</a></li>
+                <li><a href="#">화성오산교육지원청</a></li>
+            </ul>
+            <ul class="reg-edu2">
+                <li><a href="#">재단법인 경기도교육연구원</a></li>
+            </ul>
         </div>
     </section>
     <footer>
         <img src="images/logo_footer.png">
-          
+        <div>
+        <ul>
+            <li><a href="#">청사배치도</a></li>
+            <li><a href="#">찾아오시는 길</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">홈페이지이용약관</a></li>
+            <li><a href="#">홈페이지 개선의견</a></li>
+        </ul>
+        <address>
+            남부청사 (16279) 경기도 수원시 장안구 조원로 18 ☎031-1396, 031-249-0114<br>
+            북부청사 (11750) 경기도 의정부시 동일로 700
+        </address>
+        <p>Copyright&#9400; 2014 Gyeonggido Office of Education, All Right Reserved</p>
+        </div>
+        <span class="fbanner2">
+            <img src="images/wa.png">
+        </span>
     </footer>
 </body>
 </html>
