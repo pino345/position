@@ -22,9 +22,10 @@
             height: 100px;
             border: 1px solid green;
         }
+        
         header nav#topNavi{
             height: 30px;
-            background-color: #BBD4E5;
+            background-color: rgba(0,0,0,.05);
             border-bottom: 1px solid lightgray;
         }
         #topNavi ul{
@@ -39,13 +40,17 @@
             padding: 0 10px;
             text-align: center;
             line-height: 30px;
-            border-right: 1px solid white;
+            
+            border-right: 1px solid lightgray;
+        }
+        #topNavi ul li:first-child{
+            border-left: 1px solid lightgray;
         }
         #topNavi ul li a{
             font-size: 14px;
             font-weight: 600;
         }
-        header div.logoSearchArea{
+        div.logoSearchArea{
             width: 1200px;
             height: 100px;
             padding: 5px 0;
@@ -58,18 +63,27 @@
             width: 600px;
             height: 50px;
             float: left;
+            padding: 0 7px;
+            font-size: 16px;
             margin-top: 40px;
+            border: 3px solid #1285C6;
         }
         .logoSearchArea button{
+            cursor: pointer;
             width: 50px;
             height: 50px;
             margin-top: 40px;
-            margin-left: 10px;
-            background: url(images/ico_search.png) no-repeat center center / contain;
+            margin-left: -52px;
+            border: none;
+            background-color: #1285C6;
         }
-        header #mainNavi div.naviLine{
-            border-top: 1px solid gray;
-            border-bottom: 1px solid gray;
+        .logoSearchArea button i{
+            color: white;
+            font-size: 32px;
+        }
+        nav#mainNavi div.naviLine{
+            border-top: 1px solid lightgray;
+            border-bottom: 2px solid #7AC131;
             position: absolute;
             left: 0;
             right: 0;
@@ -78,31 +92,37 @@
             width: 1200px;
             height: 50px;
             margin: 0 auto;
-            border-right: 1px solid gray;
         }
-        #mainNavi ul.depth1 > li{
+        .depth1 > li{
             float: left;
             width: 170px;
-            height: 50px;
             text-align: center;
             line-height: 50px;
             font-weight: bold;
-            border-right: 1px solid gray;
+            border-right: 1px solid lightgray;
         }
-        #mainNavi ul.depth1 > li.n1{
-            border-left: 1px solid gray;
+        .depth1 > li:first-child{
+            position: relative;
+            border-left: 1px solid lightgray;
         }
-        #mainNavi ul li div.wrap{
-            width: 100%;
+        .depth1 > li:last-child, .depth1 > li:first-child{
+            width: 171px;
+        }
+        .depth1 > li:hover{
+            background-color: #7AC131;   
+        }
+        .depth1 > li:hover > a{
+            color: white;
+        }
+        .depth1 > li div.wrap{
+            border: 1px solid gold;
+            width: 1200px;
             position: absolute;
-            top: 51px;
-            right: 0;
+            top: 50px;
             left: 0;
+            width:1200px;
             overflow: hidden;
             height: 0;
-        }
-        #mainNavi li:hover{
-            background-color: rgba(35,180,194,.5);
         }
         #mainNavi li:hover div.wrap{
             overflow: visible;
@@ -675,20 +695,20 @@
         
     </aside>   
     <header>
-        <nav id="topNavi">  
+        <nav id="topNavi">     
             <ul>
-                <li style="border-left: 1px solid white;"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">사이트맵</a></li>
                 <li><a href="#">English</a></li>
-            </ul> 
+            </ul>
         </nav>
         <div class="logoSearchArea">
             <a href="http://www.goe.go.kr/">
                 <img src="images/logo.gif" alt="경기도교육청로고">
             </a>
             <input type="search" placeholder="검색어를 입력해주세요">
-            <button type="submit" src="images/ico_find2.png"></button>
+            <button type="submit" onclick="alert('검색어를 입력해주세요')"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
         <nav id="mainNavi">
             <div class="naviLine">
@@ -890,7 +910,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="n7" style="border-right:none;"><a href="#">교사/교직원</a>
+                    <li class="n7"><a href="#">교사/교직원</a>
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
