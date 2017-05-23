@@ -27,28 +27,35 @@
             background-color: gold;
         }
         
+        aside#fixRight{
+            z-index: 10000;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+        }
         header nav#topNavi{
             height: 30px;
             background-color: rgba(187, 212, 229, .5);
+            border-bottom: 1px solid lightgray;
         }
         #topNavi ul{
             width: 1200px;
-            height: 30px;
             margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
         }
         #topNavi ul li{
             float: left;
             width: 70px;
-            height: 30px;
             padding: 0 10px;
             text-align: center;
             line-height: 30px;
             border-right: 1px solid white;
-            position: relative;
-            right: -835px;
         }
         #topNavi ul li a{
-            color: black;
             font-size: 14px;
         }
         header div.logoSearchArea{
@@ -421,10 +428,36 @@
             background: url(images/x_soe1.jpg) no-repeat left bottom;
             /*261*180*/
         }
-        #content1 #edu div.eduTop{
+        #edu div.eduTop{
             border: 1px solid green;
             width: 400xp;
             height: 38px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 38px;
+        }
+        .eduTop b{
+            border: 1px solid black;
+            padding: 0 5px;
+        }
+        .c1Image{
+            display: flex;
+        }
+        .c1Image a{
+            width: 38px;
+            height: 38px;
+        }
+        .snsF{
+            background: url(images/ico_sns_facebook.png) no-repeat center center / contain;
+        }
+        .snsK{
+            background: url(images/ico_sns_kakaostory.png) no-repeat center center / contain;
+        }
+        .snsB{
+            background: url(images/ico_sns_blog.png) no-repeat center center / contain;
+        }
+        .snsR{
+            background: url(images/ico_sns_reporter.png) no-repeat center center / contain;
         }
         #content1 #edu div.eduAside{
             border: 1px solid gold;
@@ -498,7 +531,7 @@
         }
         ul.slide{
             border: 1px solid deepskyblue;
-            
+            overflow: hidden;
         }
         .slide li{
             float: left;
@@ -507,11 +540,75 @@
         }
         .sl1{
             border: 1px solid darkolivegreen;
-            background: url(images/slider01.gif) no-repeat center center; 
+            background: url(images/slide01.gif) no-repeat center center; 
         }
         .sl2{
             border: 1px solid darkolivegreen;
-            background: url(images/slider02.gif) no-repeat center center;
+            background: url(images/slide02.gif) no-repeat center center;
+        }
+        .sl3{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide03.gif) no-repeat center center;
+        }
+        .sl4{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide04.gif) no-repeat center center;
+        }
+        .sl5{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide05.gif) no-repeat center center;
+        }
+        .sl6{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide06.gif) no-repeat center center;
+        }
+        .sl7{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide07.gif) no-repeat center center;
+        }
+        .sl8{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide08.gif) no-repeat center center;
+        }
+        .sl9{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide09.gif) no-repeat center center;
+        }
+        .sl10{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide10.gif) no-repeat center center;
+        }
+        .sl11{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide11.gif) no-repeat center center;
+        }
+        .sl12{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide12.gif) no-repeat center center;
+        }
+        .sl13{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide13.gif) no-repeat center center;
+        }
+        .sl14{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide14.gif) no-repeat center center;
+        }
+        .sl15{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide15.gif) no-repeat center center;
+        }
+        .sl16{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide16.gif) no-repeat center center;
+        }
+        .sl17{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide17.gif) no-repeat center center;
+        }
+        .sl18{
+            border: 1px solid darkolivegreen;
+            background: url(images/slide18.gif) no-repeat center center;
         }
         section#content4{
             border: 1px solid green;
@@ -556,6 +653,7 @@
         #sc4:checked ~ .reg-edu2{
             display: block;
         }
+        
         footer{
             width: 100%;
             background-color: dimgrey;
@@ -581,14 +679,17 @@
     </style>
 </head>
 <body>
+    <aside id="fixRight">
+        
+    </aside>   
     <header>
-        <nav id="topNavi">
+        <nav id="topNavi">  
             <ul>
-                <li style="border-left: 1px solid white;"><a href="#">홈</a></li>
+                <li style="border-left: 1px solid white;"><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">사이트맵</a></li>
                 <li><a href="#">English</a></li>
-            </ul>
+            </ul> 
         </nav>
         <div class="logoSearchArea">
             <a class="logo" href="http://www.goe.go.kr/">
@@ -931,7 +1032,13 @@
        </article>
        <article id="edu">
            <div class="eduTop">
-               <p>경기도 교육감 이재정입니다.</p>
+               <b>경기도 교육감 이재정입니다.</b>
+               <div class="c1Image">
+               <a href="#" class="snsF"></a>
+               <a href="#" class="snsK"></a>
+               <a href="#" class="snsB"></a>
+               <a href="#" class="snsR"></a>
+               </div>
            </div>
            <div class="eduAside">
                <ul>
@@ -962,6 +1069,22 @@
         <ul class="slide">
             <li class="sl1"><a href="#"></a></li>
             <li class="sl2"><a href="#"></a></li>
+            <li class="sl3"><a href="#"></a></li>
+            <li class="sl4"><a href="#"></a></li>
+            <li class="sl5"><a href="#"></a></li>
+            <li class="sl6"><a href="#"></a></li>
+            <li class="sl7"><a href="#"></a></li>
+            <li class="sl8"><a href="#"></a></li>
+            <li class="sl9"><a href="#"></a></li>
+            <li class="sl10"><a href="#"></a></li>
+            <li class="sl11"><a href="#"></a></li>
+            <li class="sl12"><a href="#"></a></li>
+            <li class="sl13"><a href="#"></a></li>
+            <li class="sl14"><a href="#"></a></li>
+            <li class="sl15"><a href="#"></a></li>
+            <li class="sl16"><a href="#"></a></li>
+            <li class="sl17"><a href="#"></a></li>
+            <li class="sl18"><a href="#"></a></li>
         </ul>
     </section>
     <section id="content4">
