@@ -102,7 +102,6 @@
             border-right: 1px solid lightgray;
         }
         .depth1 > li:first-child{
-            position: relative;
             border-left: 1px solid lightgray;
         }
         .depth1 > li:last-child, .depth1 > li:first-child{
@@ -114,54 +113,49 @@
         .depth1 > li:hover > a{
             color: white;
         }
-        .depth1 > li div.wrap{
-            border: 1px solid gold;
-            width: 1200px;
+        .depth1 div.wrap{
             position: absolute;
-            top: 50px;
+            top: 53px;
             left: 0;
-            width:1200px;
+            right:0;
             overflow: hidden;
             height: 0;
+            background-color: white;
         }
-        #mainNavi li:hover div.wrap{
-            overflow: visible;
-            height: 300px;
-            border-bottom: 1px solid blue;
+        .depth1 > li:hover .wrap{
+            height: 310px;
+            border-bottom: 1px solid #7AC131;
             z-index: 10000;
             background-color: white;
-
         }
-        #mainNavi div.wrapwrap{
+        div.wrapwrap{
             width: 1200px;
             position: absolute;
             top: 0px;
-            right: 0;
-            left: 0;            
-            margin: 0 auto;
+            left: 50%;
+            margin-left: -600px;
         }
-        #mainNavi div.deco{
+        .wrapwrap div.deco{
             float: left;
             width: 195px;
             margin-top: 20px;
-            margin-left: 20px;
         }
-        #mainNavi div.deco img{
+        .deco p{
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .deco img{
             width: 100px;
             height: 100px;
         }
-        #mainNavi div.deco p{
-            margin-top: -25px;
-            font-weight: bold;
-        }
-        #mainNavi div.d2Wrap{
+        .wrapwrap div.d2Wrap{
+            float: left;
             width: 985px;
-            height: 200px;
             margin-top: 20px;
-            margin-left: 215px;
+            margin-left: 10px;
         }
-        #mainNavi ul.depth2 > li{
-            border: 1px solid yellow;
+        .d2Wrap ul.depth2 > li{
             float: left;
             width: 170px;
             height: 40px;
@@ -169,43 +163,39 @@
             line-height: 40px;
             margin-right: 20px;
             margin-bottom: 10px;
+            background: #FFCF43;
         }
-        #mainNavi ul.depth3-1{
-            width: 190px;
+        #mainNavi ul[class|="depth3"]{
             position: absolute;
+            padding-left: 10px;
+            width: 170px;
+            height: 25px;
+            text-align: left;
+            line-height: 25px;
+            font-size: 14px;
+        }
+        ul[class|="depth3"] i{
+            font-size: 10px;
+        }
+        .depth3-1{
+            width: 190px;
             top: 70px;
         }
-        #mainNavi ul.depth3-2{
-            width: 170px;
-            position: absolute;
+        .depth3-2{
             top: 70px;
             left: 407px;
         }
-        #mainNavi ul.depth3-3{
-            width: 170px;
-            position: absolute;
+        .depth3-3{
             top: 70px;
             left: 599px;
         }
-        #mainNavi ul.depth3-4{
-            width: 170px;
-            position: absolute;
+        .depth3-4{
             top: 70px;
             left: 791px;
         }
-        #mainNavi ul.depth3-5{
-            width: 170px;
-            position: absolute;
+        .depth3-5{
             top: 70px;
             left: 983px;
-        }
-        #mainNavi ul[class|= depth3] li{
-            height: 25px;
-            text-align: center;
-            line-height: 25px;
-            font-size: 14px;
-            text-align: left;
-            padding-left: 10px;
         }
         
         section#mainBanner{
@@ -717,8 +707,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
-                                    <img src="images/computer.png">
-                                    <p>전자민원</p>  
+                                    <p>전자민원</p>    
+                                    <img src="images/computer.png"> 
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -726,13 +716,13 @@
                                             <ul class="depth3-1">
                                                 <li><a href="#">민원안내<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
                                                 <li><a href="#">온라인일반민원신청<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">홈에듀증명민원<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">민원사전예약안내<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">검정/인가/승인/허가민원<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">자료실<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">민원옴부즈만소개<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">정보공개청구<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">사전정보 공표목록<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">홈에듀증명민원<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">민원사전예약안내<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">검정/인가/승인/허가민원<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">자료실<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">민원옴부즈만소개<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">정보공개청구<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">사전정보 공표목록<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </li>  
                                         <li><a href="#">경기에듀콜센터</a></li>
@@ -756,8 +746,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
+                                    <p>뉴스/소식</p>   
                                     <img src="images/newspaper.png">
-                                    <p>뉴스/소식</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -775,16 +765,16 @@
                                                 <li><a href="#">이용안내</a></li>
                                                 <li><a href="#">고시등록부</a></li>
                                                 <li><a href="#">공시등록부</a></li>
-                                                <li><a href="#">입법예고<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">입법예고<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">경기교육소식</a>
                                             <ul class="depth3-4">
-                                                <li><a href="#">미디어 경청<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">경기교육E-BOOK<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">경기도의회<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">생방송보기<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-                                                <li><a href="#">교육위원회<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">미디어 경청<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">경기교육E-BOOK<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">경기도의회<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">생방송보기<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">교육위원회<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -796,8 +786,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
+                                    <p>주민참여</p>   
                                     <img src="images/residents.png">
-                                    <p>주민참여</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -810,7 +800,7 @@
                                         </li>
                                         <li><a href="#">주민참여예산</a>
                                             <ul class="depth3-2">
-                                                <li><a href="#">운영<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                                                <li><a href="#">운영<i class="fa fa-window-restore" aria-hidden="true"></i></a></li>
                                                 <li><a href="#">참여게시판</a></li>
                                             </ul>
                                         </li>
@@ -832,8 +822,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
+                                    <p>교육청소개</p>   
                                     <img src="images/office.png">
-                                    <p>교육청소개</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -868,8 +858,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
+                                    <p>학생/학부모</p>   
                                     <img src="images/home.png">
-                                    <p>학생/학부모</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -892,8 +882,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
+                                    <p>일반수험생</p>   
                                     <img src="images/notebook.png">
-                                    <p>일반수험생</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -914,8 +904,8 @@
                         <div class="wrap">
                             <div class="wrapwrap">
                                 <div class="deco">
+                                    <p>교사/교직원</p>   
                                     <img src="images/school.png">
-                                    <p>교사/교직원</p>  
                                 </div>
                                 <div class="d2Wrap">
                                     <ul class="depth2">
@@ -938,6 +928,7 @@
             </div>
         </nav>
     </header>
+    
     <section id="mainBanner">
         <input id="banner1" name="mBanner" type="radio" checked>
         <label for="banner1">1</label>
