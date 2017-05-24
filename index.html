@@ -11,7 +11,6 @@
         a{text-decoration: none; color: black;}
         img{border: none;}
         input[type*="radio"]{display: none;}
-        input:checked + label{background-color: gold;}
         
         aside#fixRight{
             z-index: 10000;
@@ -25,7 +24,7 @@
         
         header nav#topNavi{
             height: 30px;
-            background-color: rgba(0,0,0,.05);
+            background-color: rgba(0,0,0,.06);
             border-bottom: 1px solid lightgray;
         }
         #topNavi ul{
@@ -49,6 +48,7 @@
         #topNavi ul li a{
             font-size: 14px;
             font-weight: 600;
+            color: #666;
         }
         div.logoSearchArea{
             width: 1200px;
@@ -121,6 +121,7 @@
             overflow: hidden;
             height: 0;
             background-color: white;
+            transition: height 0.5s ease-in-out;
         }
         .depth1 > li:hover .wrap{
             height: 310px;
@@ -177,6 +178,9 @@
         ul[class|="depth3"] i{
             font-size: 10px;
         }
+        ul[class|="depth3"] a{
+            color: dimgray;
+        }
         .depth3-1{
             width: 190px;
             top: 70px;
@@ -199,8 +203,9 @@
         }
         
         section#mainBanner{
+            border: 1px solid dimgray;
             width: 1200px;
-            height: 450px;
+            height: 449px;
             margin: 13px auto;
             margin-top: 70px;
             display: flex;
@@ -214,23 +219,32 @@
             border-radius: 50%;
             line-height: 35px;
             text-align: center;
-            margin: 10px 5px;
+            margin: 15px 8px;
             cursor: pointer;
-            border: 1px solid gray;
-            border-right: none;
-            background-color: rgba(0,0,0,.3);
+            box-shadow: 1px 1px 2px black;
+            background-color: rgba(255,255,255,.3);
         }
-        #mainBanner ul.bannerImg{
+        #mainBanner ul.bannerImg {
             position: absolute;
             width: 1200px;
-            height: 450px;
+            height: 449px;
             overflow: hidden;
         }
-        #mainBanner ul.bannerImg li{
+        #mainBanner .bannerImg li{
             position: absolute;
             top: 0;
             left: 1200px;
+            width: 1200px;
+            height: 450px;
         }
+        .bannerImg .b1{background: url(images/b1.png) no-repeat center center;}
+        .bannerImg .b2{background: url(images/b2.png) no-repeat;}
+        .bannerImg .b3{background: url(images/b3.png) no-repeat;}
+        .bannerImg .b4{background: url(images/b4.png) no-repeat;}
+        .bannerImg .b5{background: url(images/b5.png) no-repeat;}
+        .bannerImg .b6{background: url(images/b6.png) no-repeat;}
+        .bannerImg .b7{background: url(images/b7.png) no-repeat;}
+        .bannerImg .b8{background: url(images/b8.png) no-repeat;}
         #mainBanner input:nth-of-type(1):checked ~ label:nth-of-type(1),
         #mainBanner input:nth-of-type(2):checked ~ label:nth-of-type(2),
         #mainBanner input:nth-of-type(3):checked ~ label:nth-of-type(3),
@@ -239,7 +253,7 @@
         #mainBanner input:nth-of-type(6):checked ~ label:nth-of-type(6),
         #mainBanner input:nth-of-type(7):checked ~ label:nth-of-type(7),
         #mainBanner input:nth-of-type(8):checked ~ label:nth-of-type(8){
-            background: #000;
+            background: #1E3450;
             color: #fff;
         }
         #mainBanner input:nth-of-type(1):checked ~ .bannerImg li:nth-of-type(1),
@@ -267,22 +281,18 @@
         }
         
         nav#freqMenu{
-            border: 1px solid green;
-            margin: 13px auto;
-            padding: 10px 0;
             width: 1200px;
-            height: 102px;
+            margin: 13px auto;
         }
         #freqMenu ul{
-            border: 1px solid yellow;
-            width: 1150px;
-            height: 98px;
-            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid gray;
+            border-top: 2px solid #648FCB;
         }
         #freqMenu ul li{
-            border: 1px solid purple;
-            float: left;
-            margin: 0 5px;
+           border-right: 1px solid gray;
+           padding: 0 8px;   
         }
         #freqMenu ul li a{
             display: block;
@@ -353,59 +363,65 @@
         section#content1{
             margin: 13px auto;
             width: 1200px;
-            height: 222px;
-            border: 1px solid green;
+            height: 220px;
         }
         #content1 #notice{
-            border: 1px solid green;
+            border: 1px solid darkgray;
             width: 780px;
             float: left;
             margin-right: 15px;
             position: relative;
         }
-        #content1 #notice label{
-            border-right: 1px solid red;
+        #notice label{
             float: left;
             width: 180px;
             height: 40px;
             line-height: 40px;
             text-align: center;
             cursor: pointer;
+            background: rgba(0,0,0,.07);
+            border-right: 1px solid darkgray;
+            color: #333;
+            font-weight: bold;
         }
-        #content1 #notice ul{
-            border-top: 1px solid gray;
+        #notice input:checked + label{
+            background-color: #1285C6;
+            color: white;
+        }
+        #notice ul{
             width: 100%;
-            padding-bottom: 8px;
+            padding: 10px 0;
+            border-top: 1px solid darkgray;
         }
         ul.noti, ul.announ, ul.recruit{
             width: 600px;
             float: left;
             display: none;
         }
-        #n1:checked ~ ul.noti,
-        #n2:checked ~ ul.announ,
-        #n3:checked ~ ul.recruit{
+        #n1:checked ~ .noti,
+        #n2:checked ~ .announ,
+        #n3:checked ~ .recruit{
             display: block; 
         }
-        #content1 #notice ul li{
-            border: 1px solid orange;
+        #notice ul li{
             height: 32px;
             line-height: 32px;
+            margin-left: 30px;
+            list-style: square;
+            font-size: 14px;
         }
-        #content1 #notice ul li a{
-            border: 1px solid blue;
-            display: inline-block;
+        #notice ul li a{
+            float: left;
             overflow: hidden;
             width: 600px;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        #content1 #notice ul li span{
-            border: 1px solid yellow;
+        #notice ul li span{
             float: right;
+            margin-right: 10px;
         }
-        #content1 #notice > a{
-            border: 1px solid black;
+        #notice > a{
             position: absolute;
             right: 0;
             height: 40px;
@@ -423,64 +439,51 @@
             display: block;
         }
         #content1 #edu{
-            border: 1px solid orange;
+            border: 1px solid #666;
             width: 400px;
             height: 220px;
             float: left;
             background: url(images/x_soe1.jpg) no-repeat left bottom;
-            /*261*180*/
         }
         #edu div.eduTop{
-            border: 1px solid green;
+            background: #1E3450;
             width: 400xp;
-            height: 38px;
+            height: 40px;
             display: flex;
             justify-content: space-between;
             line-height: 38px;
+            color: white;
+        }
+        .eduTop > p{
+            margin: 0 auto;
         }
         .eduTop b{
-            border: 1px solid black;
-            padding: 0 5px;
-        }
-        .c1Image{
-            display: flex;
-        }
-        .c1Image a{
-            width: 38px;
-            height: 38px;
-        }
-        .snsF{
-            background: url(images/ico_sns_facebook.png) no-repeat center center / contain;
-        }
-        .snsK{
-            background: url(images/ico_sns_kakaostory.png) no-repeat center center / contain;
-        }
-        .snsB{
-            background: url(images/ico_sns_blog.png) no-repeat center center / contain;
-        }
-        .snsR{
-            background: url(images/ico_sns_reporter.png) no-repeat center center / contain;
+            font-family: serif;
+            font-weight: bold;
         }
         #content1 #edu div.eduAside{
-            border: 1px solid gold;
             float: right;
-            width: 137px;
-            height: 178px;
-        }
-        #content1 #edu div.eduAside li{
-            border: 1px solid blue;
-            height: 87px;
-            text-align: center;
-        }
-        #content1 #edu div.eduAside li img{
-            border: 1px solid lightgreen;
-            height: 60px;
-            
+            width: 139px;
+            height: 180px;
         }
         #content1 #edu div.eduAside a{
-            border:1px solid darkgreen;
-            display: block;
-            width:100%; 
+            display: flex;
+            
+            height: 88px;
+        }
+        .eduAside span{
+            
+            widows: 100%;
+            height: 72px;
+            background: url(images/ecology.png) no-repeat;
+        }
+        .eduAside b{
+            border: 1px solid gold;
+            
+            height: 16px;
+        }
+        .eduAside a:last-child{
+            background: url(images/notebook.png) no-repeat center top/ contain;
         }
         
         section#content2{
@@ -947,17 +950,18 @@
         <input id="banner8" name="mBanner" type="radio">
         <label for="banner8">8</label>
         <ul class="bannerImg">
-            <li class="b1"><a href="#"><img src="images/b1.png"></a></li>
-            <li class="b2"><a href="#"><img src="images/b2.png"></a></li>
-            <li class="b3"><a href="#"><img src="images/b3.png"></a></li>
-            <li class="b4"><a href="#"><img src="images/b4.png"></a></li>
-            <li class="b5"><a href="#"><img src="images/b5.png"></a></li>
-            <li class="b6"><a href="#"><img src="images/b6.png"></a></li>
-            <li class="b7"><a href="#"><img src="images/b7.png"></a></li>
-            <li class="b8"><a href="#"><img src="images/b8.png"></a></li>
+            <li class="b1"><a href="#"></a></li>
+            <li class="b2"><a href="#"></a></li>
+            <li class="b3"><a href="#"></a></li>
+            <li class="b4"><a href="#"></a></li>
+            <li class="b5"><a href="#"></a></li>
+            <li class="b6"><a href="#"></a></li>
+            <li class="b7"><a href="#"></a></li>
+            <li class="b8"><a href="#"></a></li>
         </ul>      
     </section>
-    <nav id="freqMenu">
+    
+    <nav id="freqMenu">   
         <ul>
             <li class="f1"><a href="#"></a></li>
             <li class="f2"><a href="#"></a></li>
@@ -971,6 +975,7 @@
             <li class="f10"><a href="#"></a></li>
         </ul>
     </nav>
+    
     <section id="content1">
        <article id="notice">
             <input id="n1" name="noticeR" type="radio" checked>
@@ -981,74 +986,66 @@
             <label for="n3">시험/채용정보</label>
             <ul class="noti list">
                 <li><a href="#">경기도교육복지종합센터 '춘천 분재전' 개최 안내</a>
-                <span class="date">2017-05-19</span>
+                <span>2017-05-19</span>
                 </li>
                 <li><a href="#">한-아세안 FTA 발효 10주년 기념 행사 알림</a>
-                <span class="date">2017-05-19</span>
+                <span>2017-05-19</span>
                 </li>
                 <li><a href="#">2017 대안교육 위탁기관 추가 지정 결과 공고</a>
-                <span class="date">2017-05-19</span>
+                <span>2017-05-19</span>
                 </li>
                 <li><a href="#">서울특별시강서양천교육지원청 채권압류 통지 공시송달 공고문 게시</a>
-                <span class="date">2017-05-18</span>
+                <span>2017-05-18</span>
                 </li>
                 <li><a href="#">학생안전체험차량 캐릭터 공모전 당선작품(당선작, 가작) 공개</a>
-                <span class="date">2017-05-17</span>
+                <span>2017-05-17</span>
                 </li>
             </ul>
-            <a href="#" title="공지사항 더보기"><i class="fa fa-plus" aria-hidden="true">더보기</i></a>
+            <a href="#" title="공지사항 더보기">더보기<i class="fa fa-plus" aria-hidden="true"></i></a>
             <ul class="announ list">
                 <li><a href="#">(재)경기도교육연구원 이사회 선임직 임원 공개모집 공고</a>
-                <span class="date">2017-05-19</span>
+                <span>2017-05-19</span>
                 </li>
                 <li><a href="#">2017 대안교육 위탁기관 추가 지정 결과 공고</a>
-                <span class="date">2017-05-18</span>
+                <span>2017-05-18</span>
                 </li>
                 <li><a href="#">2017년 청소년 독서 어울림 '수book수book' 행사 대행 용역 재공고</a>
-                <span class="date">2017-05-17</span>
+                <span>2017-05-17</span>
                 </li>
                 <li><a href="#">경기도교육청 학교급식 지원단가 성질별 분리방안 연구 용역 입찰 공고</a>
-                <span class="date">2017-05-16</span>
+                <span>2017-05-16</span>
                 </li>
                 <li><a href="#">경기도율곡연수원 혁신교육관(안양) 리모델링공사 설계용역(설계공모)</a>
-                <span class="date">2017-05-16</span>
+                <span>2017-05-16</span>
                 </li>
             </ul>
-            <a href="#" title="고시/공고/입법예고 더보기"><i class="fa fa-plus" aria-hidden="true">더보기</i></a>
+            <a href="#" title="고시/공고/입법예고 더보기">더보기<i class="fa fa-plus" aria-hidden="true"></i></a>
             <ul class="recruit list">
                 <li><a href="#">2018학년도 대입 수시전형 대비 검정고시 합격자의 대입전형자료 온라인 제공 신청 안내</a>
-                <span class="date">2017-05-16</span>
+                <span>2017-05-16</span>
                 </li>
                 <li><a href="#">2017년도 제2회 경기도 교육청 일반임기제공무원 채용시험 서류전형</a>
-                <span class="date">2017-05-16</span>
+                <span>2017-05-16</span>
                 </li>
                 <li><a href="#">2017년도 제1회 검정고시 합격자 공고</a>
-                <span class="date">2017-05-11</span>
+                <span>2017-05-11</span>
                 </li>
                 <li><a href="#">2018학년도 경기도 공립 유치원·초등학교·특수학교(유치원·초등)교사 임용후보자 선정경쟁시험 사전예고 관련 안내</a>
-                <span class="date">2017-05-10</span>
+                <span>2017-05-10</span>
                 </li>
                 <li><a href="#">2017년도 제1회 경기도교육청 일반임기제공무원 채용시험 최종합격자 발표 및 임용후보자 등록 공고</a>
-                <span class="date">2017-05-02</span>
+                <span>2017-05-02</span>
                 </li>
             </ul>
-            <a href="#" title="시험/채용정보 더보기"><i class="fa fa-plus" aria-hidden="true">더보기</i></a>
+            <a href="#" title="시험/채용정보 더보기">더보기<i class="fa fa-plus" aria-hidden="true"></i></a>
        </article>
        <article id="edu">
            <div class="eduTop">
-               <b>경기도 교육감 이재정입니다.</b>
-               <div class="c1Image">
-               <a href="#" class="snsF"></a>
-               <a href="#" class="snsK"></a>
-               <a href="#" class="snsB"></a>
-               <a href="#" class="snsR"></a>
-               </div>
+               <p>경기교육의 새로운 변화! 교육감 <b>이재정</b>입니다.</p>
            </div>
            <div class="eduAside">
-               <ul>
-               <li class="e1"><img src="images/ecology.png"><a href="#">공약 &amp;매니페스토</a></li>
-               <li class="e2"><img src="images/edit.png"><a href="#">교육감에게 바란다</a></li>
-               </ul>
+               <a href="#"><span></span><b>공약 &amp;매니페스토</b></a>
+               <a href="#">교육감에게 바란다</a>
            </div>
        </article> 
     </section>
