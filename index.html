@@ -41,17 +41,18 @@
         }
         #topNavi ul li{
             float: left;
-            width: 70px;
-            padding: 0 10px;
+            width: 90px;
             text-align: center;
             line-height: 30px;
-            
             border-right: 1px solid lightgray;
         }
         #topNavi ul li:first-child{
             border-left: 1px solid lightgray;
         }
         #topNavi ul li a{
+            display: block;
+            width: 90px;
+            height: 30px;
             font-size: 14px;
             font-weight: 600;
             color: #666;
@@ -293,12 +294,14 @@
         #freqMenu ul{
             display: flex;
             justify-content: space-around;
+            height: 96px;
             border: 1px solid gray;
             border-top: 2px solid #648FCB;
         }
         #freqMenu ul li{
            border-right: 1px solid gray;
-           padding: 0 8px;   
+           padding: 0 8px; 
+           align-self: flex-end; 
         }
         #freqMenu ul li a{
             display: block;
