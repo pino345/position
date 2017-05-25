@@ -11,15 +11,21 @@
         a{text-decoration: none; color: black;}
         img{border: none;}
         input[type*="radio"]{display: none;}
+        address{
+            font-style: normal;
+        }
         
         aside#fixRight{
             z-index: 10000;
             position: fixed;
-            right: 0;
-            bottom: 0;
-            width: 100px;
-            height: 100px;
-            border: 1px solid green;
+            right: 30px;
+            bottom: 50px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            background: #2762CC;
         }
         
         header nav#topNavi{
@@ -385,7 +391,8 @@
             font-weight: bold;
         }
         #notice input:checked + label{
-            background-color: #1285C6;
+            background-color: #2762CC;
+            opacity: .9;
             color: white;
         }
         #notice ul{
@@ -439,85 +446,94 @@
             display: block;
         }
         #content1 #edu{
-            border: 1px solid #666;
+            border: 1px solid darkgray;
+            border-right: none;
             width: 400px;
             height: 220px;
-            float: left;
+            float: right;
             background: url(images/x_soe1.jpg) no-repeat left bottom;
         }
         #edu div.eduTop{
+            border-bottom: 1px solid darkgray;
             background: #1E3450;
             width: 400xp;
             height: 40px;
-            display: flex;
-            justify-content: space-between;
             line-height: 38px;
-            color: white;
-        }
-        .eduTop > p{
-            margin: 0 auto;
+            text-align: center;
+            color: rgba(255,255,255,.8);
         }
         .eduTop b{
             font-family: serif;
-            font-weight: bold;
         }
-        #content1 #edu div.eduAside{
+        #edu div.eduAside{
             float: right;
             width: 139px;
-            height: 180px;
+            height: 177px;
         }
-        #content1 #edu div.eduAside a{
-            display: flex;
-            
-            height: 88px;
+        .eduAside a{
+            border: 1px solid darkgray;
+            border-bottom: none;
+            background: rgba(0,0,0,.05);
+            display: block;
+            height: 79px;
+            padding-top: 10px;
+        }
+        .eduAside a:first-child{
+            border-top: none;
+        }
+        .eduAside a:hover{
+            color:white;
+            background: #7AC131;
         }
         .eduAside span{
-            
-            widows: 100%;
-            height: 72px;
-            background: url(images/ecology.png) no-repeat;
+            display: block;
+            width: 138px;
+            height: 50px;
         }
-        .eduAside b{
-            border: 1px solid gold;
-            
-            height: 16px;
+        .eduAside a:first-child span{
+            background: url(images/ecology.png) no-repeat center center / contain;
         }
-        .eduAside a:last-child{
-            background: url(images/notebook.png) no-repeat center top/ contain;
+        .eduAside a:last-child span{
+            background: url(images/edit.png) no-repeat center center / contain;
+        }
+        .eduAside p{
+            align-self: flex-end;
+            width: 138px;
+            height: 20px;
+            font-size: 15px;
+            text-align: center;
+            font-weight: 600;
         }
         
         section#content2{
-            border: 1px solid green;
             clear: both;
             width: 1200px;
             height: 180px;
-            margin: 13px auto;
+            margin: 17px auto;
             display: flex;
             justify-content: space-between;
-            align-content: flex-end;
         }
         #content2 div[class]{
-            border: 1px solid blue;
-            background-color: rgba(0,0,0,.1);
-            width: 390px;
+            border: 1px solid darkgray;
+            background-color: rgba(0,0,0,.03);
+            width: 380px;
             text-align: center;
         }
         #content2 div[class] div{
-            border: 1px solid gold;
-            height: 100%; 
+            width: 380px;
+            height: 180px; 
             display: flex;
         }
-        #content2 div.news div{
-            background: url(images/news.jpg) no-repeat center center / cover;
+        .news div{
+            background: url(images/news.png) no-repeat center center / contain;
         }
-        #content2 div.ebook div{
-            background: url(images/ebook.gif) no-repeat center center /cover;
+        .ebook div{
+            background: url(images/ebook.png) no-repeat center center / contain;
         }
-        #content2 div.media div{
-            background: url(images/media.jpg) no-repeat center center /cover;
+        .media div{
+            background: url(images/media.png) no-repeat center center / contain;
         }
         #content2 div[class] div p{
-            border: 1px solid red;
             align-self: flex-end;
             width: 100%;
             height: 50px;
@@ -528,102 +544,95 @@
         }
         
         section#content3{
-            border: 1px solid green;
+            border: 1px solid darkgray;
             width: 1200px;
-            height: 200px;
+            height: 134px;
             margin: 13px auto;
-            display: flex;
+            overflow: hidden;
         }
         ul.slide{
-            border: 1px solid deepskyblue;
-            overflow: hidden;
+            display: flex;
+            width: 5328px;
+            height: 134px;
         }
         .slide li{
             float: left;
             width: 296px;
-            height: 200px;
+            height: 134px;
+            overflow: hidden;
+            animation: slideCard 180s linear infinite;
+        }
+        @keyframes slideCard{
+            6%{transform: translateX(-296px);}
+            99.99%{transform: translateX(-5328px);}
+            100%{transform: translateX(0px);}
+        }
+        .slide:hover li{
+            animation-play-state: paused;
         }
         .sl1{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide01.gif) no-repeat center center; 
+            background: url(images/slide01.gif) no-repeat center top; 
         }
         .sl2{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide02.gif) no-repeat center center;
+            background: url(images/slide02.gif) no-repeat center top;
         }
         .sl3{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide03.gif) no-repeat center center;
+            background: url(images/slide03.gif) no-repeat center top;
         }
         .sl4{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide04.gif) no-repeat center center;
+            background: url(images/slide04.gif) no-repeat center top;
         }
         .sl5{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide05.gif) no-repeat center center;
+            background: url(images/slide05.gif) no-repeat center top;
         }
         .sl6{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide06.gif) no-repeat center center;
+            background: url(images/slide06.gif) no-repeat center top;
         }
         .sl7{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide07.gif) no-repeat center center;
+            background: url(images/slide07.gif) no-repeat center top;
         }
         .sl8{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide08.gif) no-repeat center center;
+            background: url(images/slide08.gif) no-repeat center top;
         }
         .sl9{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide09.gif) no-repeat center center;
+            background: url(images/slide09.gif) no-repeat center top;
         }
         .sl10{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide10.gif) no-repeat center center;
+            background: url(images/slide10.gif) no-repeat center top;
         }
         .sl11{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide11.gif) no-repeat center center;
+            background: url(images/slide11.gif) no-repeat center top;
         }
         .sl12{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide12.gif) no-repeat center center;
+            background: url(images/slide12.gif) no-repeat center top;
         }
         .sl13{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide13.gif) no-repeat center center;
+            background: url(images/slide13.png) no-repeat center top;
         }
         .sl14{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide14.gif) no-repeat center center;
+            background: url(images/slide14.gif) no-repeat center top;
         }
         .sl15{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide15.gif) no-repeat center center;
+            background: url(images/slide15.gif) no-repeat center top;
         }
         .sl16{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide16.gif) no-repeat center center;
+            background: url(images/slide16.png) no-repeat center top;
         }
         .sl17{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide17.gif) no-repeat center center;
+            background: url(images/slide17.gif) no-repeat center top;
         }
         .sl18{
-            border: 1px solid darkolivegreen;
-            background: url(images/slide18.gif) no-repeat center center;
+            background: url(images/slide18.gif) no-repeat center top;
         }
+        
         section#content4{
-            border: 1px solid green;
+            border: 1px solid darkgray;
             width: 1200px;
-            height: 200px;
+            height: 255px;
             margin: 13px auto;
         }
         #content4 div.shortcut{
             width: 1200px;
-            border: 1px solid gold;
             display: flex;
             position: relative;
         }
@@ -633,21 +642,36 @@
             line-height: 50px;
             text-align: center;
             cursor: pointer;
-            border: 1px solid gray;
+            border-right: 1px solid darkgray;
+            border-bottom: 1px solid darkgray;
+            font-weight: bold;
+        }
+        .shortcut label:last-of-type{
             border-right: none;
+        }
+        .shortcut input:checked + label{
+            background-color: #7AC131;
+            color: white;
         }
         .shortcut ul{
             position: absolute;
             top: 50px;
             height: auto;
+            padding: 10px 15px;
         }
         .shortcut ul li{
-            border: 1px solid lightblue;
+            list-style: square;
             float: left;
-            white-space: nowrap;
-            width: 185px;
-            margin-right: 13px;
-            font-size: 15px;
+            width: 200px;
+            margin: 7px 15px;
+            font-size: 14px;
+        }
+        .shortcut ul li a{
+            color: rgba(0,0,0,.8);
+            font-weight: 600;
+        }
+        .shortcut ul li:hover a{
+            color: #2762CC;
         }
         .rel-org, .dir-org, .reg-edu, .reg-edu2{
             display: none;
@@ -660,33 +684,93 @@
         }
         
         footer{
+            clear:both;
             width: 100%;
-            background-color: dimgrey;
+            background-color: #484848;
+        }
+        footer div.f1{
+            background: #1E3450;
+        }
+        .f1 ul{
+            width: 1200px;
+            height: 28px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
-            color: white;
         }
-        footer ul li{
+        .f1 ul li a{
+            line-height: 28px;
+            padding:0 20px;
+            border-right: 1px solid gray;
+            font-size: 15px;
+        }
+        .f1 ul li:last-child a{
+            border-right: none;
+        }
+        .f1 ul li:nth-child(3) a{
+            color: #FFCF43;
+        }
+        .f1 ul li a{
+            color: rgba(255,255,255,.8);
+        }
+        footer div.f2{
+            position: relative;
+            width: 1200px;
+            height: 120px;
+            margin: 0 auto;
+            padding: 10px;
+            background: #484848;
+        }
+        .f2 > span{
+            background: url(images/logo_footer.png) no-repeat center center;
+            width: 212px;
+            height: 110px;
+            float: left; 
+            margin-right: 10px;
+        }
+        .f2 address{
             float: left;
-            padding: 0 10px;
-            border-right: 1px solid black;
+            margin-top: 20px;
+            font-size: 13.5px;
+            color: rgba(255,255,255,.7);
+        }        
+        .f2 address p{
+            margin-top: 5px;
         }
-        footer ul li a{
-            
+        .f2 > a{
+            background: url(images/wa.png) no-repeat center center/ contain;
+            float: right;
+            width: 100px;
+            height: 70px;
         }
-        footer address{
-            font-style: normal;
-            clear: both;
+        .f2 div{
+            position: absolute;
+            right: 0;
+            top: 88px;
         }
-        footer span{
-            
+        .f2 div a{
+            float: left;
+            width:35px;
+            height: 35px;
+            border-radius: 40%;
+            margin-right: 3px;
+            box-shadow: 1px 1px 1px black;
+        }
+        .f2 div a:nth-of-type(1){
+            background: url(images/ico_sns_facebook.png) no-repeat center center/ contain;
+        }
+        .f2 div a:nth-of-type(2){
+            background: url(images/ico_sns_kakaostory.png) no-repeat center center/ contain;
+        }
+        .f2 div a:nth-of-type(3){
+            background: url(images/ico_sns_blog.png) no-repeat center center/ contain;
+        }
+        .f2 div a:nth-of-type(4){
+            background: url(images/ico_sns_reporter.png) no-repeat center center/ contain;
         }
     </style>
 </head>
-<body>
-    <aside id="fixRight">
-        
-    </aside>   
+<body>   
     <header>
         <nav id="topNavi">     
             <ul>
@@ -1044,11 +1128,12 @@
                <p>경기교육의 새로운 변화! 교육감 <b>이재정</b>입니다.</p>
            </div>
            <div class="eduAside">
-               <a href="#"><span></span><b>공약 &amp;매니페스토</b></a>
-               <a href="#">교육감에게 바란다</a>
+               <a href="#"><span></span><p>공약 &amp;매니페스토</p></a>
+               <a href="#"><span></span><p>교육감에게 바란다</p></a>
            </div>
        </article> 
     </section>
+    
     <section id="content2">
         <div class="news">
             <div>
@@ -1066,28 +1151,30 @@
             </div>
         </div>
     </section>
+    
     <section id="content3">
         <ul class="slide">
-            <li class="sl1"><a href="#"></a></li>
-            <li class="sl2"><a href="#"></a></li>
-            <li class="sl3"><a href="#"></a></li>
-            <li class="sl4"><a href="#"></a></li>
-            <li class="sl5"><a href="#"></a></li>
-            <li class="sl6"><a href="#"></a></li>
-            <li class="sl7"><a href="#"></a></li>
-            <li class="sl8"><a href="#"></a></li>
-            <li class="sl9"><a href="#"></a></li>
-            <li class="sl10"><a href="#"></a></li>
-            <li class="sl11"><a href="#"></a></li>
-            <li class="sl12"><a href="#"></a></li>
-            <li class="sl13"><a href="#"></a></li>
-            <li class="sl14"><a href="#"></a></li>
-            <li class="sl15"><a href="#"></a></li>
-            <li class="sl16"><a href="#"></a></li>
-            <li class="sl17"><a href="#"></a></li>
-            <li class="sl18"><a href="#"></a></li>
+            <a href="#"><li class="sl1"></li></a>
+            <a href="#"><li class="sl2"></li></a>
+            <a href="#"><li class="sl3"></li></a>
+            <a href="#"><li class="sl4"></li></a>
+            <a href="#"><li class="sl5"></li></a>
+            <a href="#"><li class="sl6"></li></a>
+            <a href="#"><li class="sl7"></li></a>
+            <a href="#"><li class="sl8"></li></a>
+            <a href="#"><li class="sl9"></li></a>
+            <a href="#"><li class="sl10"></li></a>
+            <a href="#"><li class="sl11"></li></a>
+            <a href="#"><li class="sl12"></li></a>
+            <a href="#"><li class="sl13"></li></a>
+            <a href="#"><li class="sl14"></li></a>
+            <a href="#"><li class="sl15"></li></a>
+            <a href="#"><li class="sl16"></li></a>
+            <a href="#"><li class="sl17"></li></a>
+            <a href="#"><li class="sl18"></li></a>
         </ul>
     </section>
+    
     <section id="content4">
         <div class="shortcut">
             <input id="sc1" name="shortCut" type="radio" checked>
@@ -1153,8 +1240,8 @@
                 <li><a href="#">포천학생야영장</a></li>
                 <li><a href="#">경기도학생교육원</a></li>
                 <li><a href="#">경기평생교육학습관</a></li>
-                <li><a href="#">경기도농업계고등학교공동실습소</a></li>
-                <li><a href="#">경기도공업계고등학교공동실습소</a></li>
+                <li style="width: 210px;"><a href="#">경기도농업계고등학교공동실습소</a></li>
+                <li style="width: 210px;"><a href="#">경기도공업계고등학교공동실습소</a></li>
             </ul>
             <ul class="reg-edu">
                 <li><a href="#">가평교육지원청</a></li>
@@ -1189,8 +1276,7 @@
         </div>
     </section>
     <footer>
-        <img src="images/logo_footer.png">
-        <div>
+        <div class="f1">
         <ul>
             <li><a href="#">청사배치도</a></li>
             <li><a href="#">찾아오시는 길</a></li>
@@ -1198,15 +1284,27 @@
             <li><a href="#">홈페이지이용약관</a></li>
             <li><a href="#">홈페이지 개선의견</a></li>
         </ul>
-        <address>
-            남부청사 (16279) 경기도 수원시 장안구 조원로 18 ☎031-1396, 031-249-0114<br>
-            북부청사 (11750) 경기도 의정부시 동일로 700
-        </address>
-        <p>Copyright&#9400; 2014 Gyeonggido Office of Education, All Right Reserved</p>
         </div>
-        <span class="fbanner2">
-            <img src="images/wa.png">
-        </span>
+        <div class="f2">
+        <span></span>
+        <address>
+            <span>   
+            <p>남부청사 (16279) 경기도 수원시 장안구 조원로 18 ☎031-1396, 031-249-0114</p>
+            <p>북부청사 (11750) 경기도 의정부시 동일로 700</p>
+            <p>Copyright&#9400; 2014 Gyeonggido Office of Education, All Right Reserved</p>
+            </span>
+        </address>
+        <a href="#"></a>
+        <div>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        </div>
     </footer>
+    <aside id="fixRight">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </aside>
 </body>
 </html>
